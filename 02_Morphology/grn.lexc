@@ -1,0 +1,30 @@
+Multichar_Symbols
+
+%{m%}
+%>
+%<n%>   
+%<gen%>   
+%<loc%>   
+
+LEXICON Root
+
+Nouns;
+
+LEXICON N
+
+%<n%>: CASE ;
+ 
+LEXICON CASE
+
+%<nom%>: # ; 
+%<gen%>:%>gui #;
+%<loc%>:%>%{m%}e #;
+
+
+LEXICON Nouns
+
+ava:ava N ;
+óga:óga N ; 
+irũ:irũ N ;
+apyka:apyka N ; 
+
