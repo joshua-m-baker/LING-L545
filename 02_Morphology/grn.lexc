@@ -5,6 +5,9 @@ Multichar_Symbols
 %<n%>   
 %<gen%>   
 %<loc%>   
+%<nom%>   
+
+%<der_kue%>
 
 LEXICON Root
 
@@ -13,6 +16,10 @@ Nouns;
 LEXICON N
 
 %<n%>: CASE ;
+%<n%>: SUBST ;
+
+LEXICON SUBST
+%<der_kue%>:%>kue # "weight: 1.0" ;
  
 LEXICON CASE
 
@@ -26,5 +33,6 @@ LEXICON Nouns
 ava:ava N ;
 óga:óga N ; 
 irũ:irũ N ;
-apyka:apyka N ; 
-
+apyka:apyka N ;
+tembiasa:tembiasa N ; 
+akãvai:akãvai N ;
