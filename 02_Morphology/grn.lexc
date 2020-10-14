@@ -8,6 +8,7 @@ Multichar_Symbols
 %<nom%>   
 
 %<der_kue%>
+%<comp%>
 
 LEXICON Root
 
@@ -26,7 +27,7 @@ LEXICON CASE
 %<nom%>: # ; 
 %<gen%>:%>gui #;
 %<loc%>:%>%{m%}e #;
-
+%<comp%>:%> #;
 
 LEXICON Nouns
 
