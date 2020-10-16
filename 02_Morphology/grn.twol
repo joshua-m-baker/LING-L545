@@ -5,6 +5,14 @@ a b ã c d e ẽ g g̃ h i ĩ j k l m n ñ o õ p r s t u ũ v w x y z ỹ á é
 
 %{m%}:p
 %{m%}:m
+
+%{n%}:k
+%{n%}:g
+
+%{g%}:0
+%{g%}:n
+
+%{s%}:0
 ;
 
 Sets
@@ -23,10 +31,6 @@ Rules
 "Remove morpheme boundary"
 %>:0 <=> _ ;
 
-"Surface [m] in loc affix after nasals"
-%{m%}:m <=> Nas: %>: _ ;
-
-
 "Change vowel to tonal before atonal suffix" 
 Va:Vt <=> _ %>: [%{m%}: e: | i: c: h: a:] ;
           where Va in ( a e o u y )
@@ -39,3 +43,19 @@ Vx:0 <=> _ %>: i: c: h: a: ;
 "Change i to tonal before atonal suffixes"
 i:í <=>  _ %>: %{m%}: e: ;
 
+"Surface [n] in plural nouns"
+%{n%}:n <=> Nas: %>: _ ;
+
+"Surface [g] in pl nouns after nasals"
+%{g%}:g <=> %{n%}:n _ ;
+
+"Change tonal vowel to atonal if tonal in affix"
+Vt:Va <=>  _ [ ? - VowsTon]+  VowsTon: ;
+          where Vt in ( á é ó ú ý ) 
+                Va in ( a e o u y ) 
+          matched;
+
+"Surface [m] in loc affix after nasals"
+%{m%}:m <=> Nas: %>: _ ;
+            except
+            %{s%}: %>: _ ;
