@@ -13,6 +13,7 @@ a b ã c d e ẽ g g̃ h i ĩ j k l m n ñ o õ p r s t u ũ v w x y z ỹ á é
 %{g%}:n
 
 %{s%}:0
+%{d%}:0
 ;
 
 Sets
