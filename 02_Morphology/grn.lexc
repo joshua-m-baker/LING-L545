@@ -20,7 +20,7 @@ Multichar_Symbols
 LEXICON Root
 
 Nouns;
-DIGITLEX;
+!DIGITLEX;
 
 LEXICON N
 
@@ -60,32 +60,32 @@ akãvai:akãvai N ;
 asociación:asociación N-SPA ;
 declaración:declaración N-SPA ;
 
-LEXICON NUM-DIGIT
-
-%<num%>:%- CASE ;
-
-LEXICON LOOP
-
-LAST-DIGIT ;
-DIGITLEX ;
-
-
-LEXICON LAST-DIGIT
-
-1:1%{d%} NUM-DIGIT ; !"peteĩ"
-3:3 NUM-DIGIT ; !"mbohapy"
-
-LEXICON DIGITLEX
-
-%0:%0 LOOP ;
-1:1   LOOP ;
-2:2   LOOP ;
-3:3   LOOP ;
-4:4   LOOP ;
-5:5   LOOP ;
-6:6   LOOP ;
-7:7   LOOP ;
-8:8   LOOP ;
-9:9   LOOP ;
+!LEXICON NUM-DIGIT
+!
+!%<num%>:%- CASE ;
+!
+!LEXICON LOOP
+!
+!LAST-DIGIT ;
+!DIGITLEX ;
+!
+!
+!LEXICON LAST-DIGIT
+!
+!1:1%{d%} NUM-DIGIT ; !"peteĩ"
+!3:3 NUM-DIGIT ; !"mbohapy"
+!
+!LEXICON DIGITLEX
+!
+!%0:%0 LOOP ;
+!1:1   LOOP ;
+!2:2   LOOP ;
+!3:3   LOOP ;
+!4:4   LOOP ;
+!5:5   LOOP ;
+!6:6   LOOP ;
+!7:7   LOOP ;
+!8:8   LOOP ;
+!9:9   LOOP ;
 
 
