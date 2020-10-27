@@ -164,39 +164,47 @@ class PerceptronTagger():
 		features = defaultdict(int)
 		# It's useful to have a constant feature, which acts sort of like a prior		
 		add('bias')
-
-		add('i suffix', word[-3:])
-		add('i pref1', word[0])
-		add('i word', context[i])
-		add('i tag+i-2 tag', prev, prev2)
-
-		add('i-1 tag', prev)
-		add('i-1 suffix', context[i-1][-3:])
-		add('i-1 pref1', context[i-1][0])
-		add('i-1 word', context[i-1])
-		add('i-1 tag+i word', prev, context[i])
-
-		add('i-2 tag', prev2)
+		
 		add('i-2 suffix', context[i-2][-3:])
-		add('i-2 pref1', context[i-2][0])
-		add('i-2 word', context[i-2])
-
+		add('i-1 suffix', context[i-1][-3:])
+		add('i suffix', word[-3:])
 		add('i+1 suffix', context[i+1][-3:])
-		add('i+1 word', context[i+1])
-
 		add('i+2 suffix', context[i+2][-3:])
+
+		add('i-2 suffix1', context[i-2][-1:])
+		add('i-1 suffix1', context[i-1][-1:])
+		add('i suffix1', word[-1:])
+		add('i+1 suffix1', context[i+1][-1:])
+		add('i+2 suffix1', context[i+2][-1:])
+
+		add('i-2 word', context[i-2])
+		add('i-1 word', context[i-1])
+		add('i word', context[i])
+		add('i+1 word', context[i+1])
 		add('i+2 word', context[i+2])
+
+		add('i-2 bigram', context[i-2], context[i-1])		
+		add('i-1 bigram', context[i-1], context[i])
+		add('i+1 bigram', context[i], context[i+1])
+		add('i+2 bigram', context[i+1], context[i+2])
+
+		add('i-2 pref1', context[i-2][0])
+		add('i-1 pref1', context[i-1][0])
+		add('i pref1', word[0])
+		# add('i+1 pref1', context[i+1][0])
+		# add('i+2 pref1', context[i+2][0])
 
 		add('i-2 pref3', context[i-2][0:3])
 		add('i-1 pref3', context[i-1][0:3])
 		add('i pref3', context[i][0:3])
 
 
-		# add('i-2 bigram', context[i-2], context[i-1])
-		# add('i+2 bigram', context[i+1], context[i+2])
-		# add('i-1 bigram', context[i-1], context[i])
-		# add('i+1 bigram', context[i], context[i+1])
+		add('i tag+i-2 tag', prev, prev2)
 
+		#add('i-1 tag+i word', prev, context[i])
+		#add('i-2 tag+i word', prev2, context[i-1])
+		
+		
 
 		#print(word, '|||', features)
 		
