@@ -5,6 +5,7 @@ a b ã c d e ẽ g g̃ h i ĩ j k l m n ñ o õ p r s t u ũ v w x y z ỹ á é
 
 %{m%}:p
 %{m%}:m
+
 %{s%}:0
 %{d%}:0
 
@@ -29,8 +30,6 @@ VowsAton = A E I O U Y
 
 
 Rules
-"Remove morpheme boundary"
-%>:0 <=> _ ;
 
 "Change vowel to tonal before atonal suffix" 
 Va:Vt <=> _ %>: [%{m%}: e: | i: c: h: a:] ;
