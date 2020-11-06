@@ -1,4 +1,3 @@
-from evaluation_script.conll17_ud_eval import load_conllu
 
 # names = [
 #     "UD_Croatian-SET/hr_set-ud-train.conllu", 
@@ -7,6 +6,14 @@ from evaluation_script.conll17_ud_eval import load_conllu
 #     "UD_Turkish-GB/tr_gb-ud-test.conllu",
 #     "UD_Russian-GSD/ru_gsd-ud-train.conllu"
 # ]
+
+names = [
+    "UD_Afrikaans-AfriBooms/af_afribooms-ud-train.conllu",
+    "UD_Belarusian-HSE/be_hse-ud-train.conllu",
+    "UD_Coptic-Scriptorium/cop_scriptorium-ud-train.conllu",
+    "UD_Lithuanian-ALKSNIS/lt_alksnis-ud-train.conllu", 
+    "UD_Slovak-SNK/sk_snk-ud-train.conllu"
+]
 
 sentences = {}
 for fname in names:
