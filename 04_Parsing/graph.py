@@ -9,6 +9,7 @@ scores = {
 
 import sys
 import matplotlib.pyplot as plt
+from adjustText import adjust_text
 
 labels = {0:'eng', 1:'rus', 2:'gle',3:'tur',4:'spa'}
 
@@ -23,10 +24,12 @@ plt.xlim([0,1]) # Set the x and y axis ranges
 plt.ylim([0,1])
 plt.xlabel('OV') # Set the x and y axis labels
 plt.ylabel('VO')
+texts = []
 for name, vals in scores.items():  # Add labels to each of the points
     n = name.split("/")[0]
     n = n.split("_")[1]
     n = n.split("-")[0]
-    plt.text(vals["ov"]-0.03, vals["vo"]-0.03, n, fontsize=9)
+    texts += [plt.text(vals["ov"], vals["vo"], n, fontsize=9)]
+adjust_text(texts, arrowprops=dict(arrowstyle='->', color='blue', lw=.5))
 plt.savefig("word_order.png")
 plt.show()
